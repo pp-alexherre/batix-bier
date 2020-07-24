@@ -17,7 +17,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage }).single('file');
 let RESPONSE;
 
-exports.uploadFile = async(req, res, next) => {
+exports.uploadFile = async(req, res) => {
 
     RESPONSE = res;
     upload(req, res, (err) => {
@@ -25,7 +25,7 @@ exports.uploadFile = async(req, res, next) => {
             return res.status(501).json({ error: err });
         }
         console.log('FileUpload gestartet --> ', req.file.mimetype);
-        _readCurrentFileXML(req.file.originalname, res, next)
+        _readCurrentFileXML(req.file.originalname, res)
     })
 }
 
@@ -82,7 +82,7 @@ const _readCurrentFileXML = async(filename, res, next) => {
 // Nach den Bier Objeken filtern und übergeben
 let INDEX = 0;
 dataItemArray = [];
-const _filterCurrentFile = async(dataArray, res, name, next) => {
+const _filterCurrentFile = async(dataArray, res, name) => {
 
     dataArray.forEach(async dataItem => {
         // if (dataItem.COUNTRY == 'Germany' || dataItem.COUNTRY == 'Austria' || dataItem.COUNTRY == 'Switzerland') {
@@ -93,14 +93,14 @@ const _filterCurrentFile = async(dataArray, res, name, next) => {
         }
         // }
     })
-    _writeCurrentFileToDatabase(dataItemArray, name, INDEX, res, next);
+    _writeCurrentFileToDatabase(dataItemArray, name, INDEX, res);
 }
 let groupID = 0;
 let cacheCountry = 'init';
 let INDEX2 = 0;
 
 // gefilterte Daten in die Databank schreiben
-const _writeCurrentFileToDatabase = async(dataItemArray, name, index, res, next) => {
+const _writeCurrentFileToDatabase = async(dataItemArray, name, index, res) => {
 
     console.log('_writeCurrentFileToDatabase gestartet')
 
