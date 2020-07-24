@@ -17,43 +17,11 @@ router.get(`${apiRoute}/getchartsetitem`, chartsetData.getchartsetItem);
 
 router.put(`${apiRoute}/updatecountryItem`, metaData.updateCountryItem);
 
-
-
-
-
-
-
-
 router.post(`${apiRoute}/uploadfile`, fileUpload.deleteDbUpload, fileUpload.uploadFile);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 router.post(`${apiRoute}/deleteallentries`, fileUpload.deleteEntriesDb);
 
 router.get('/', (req, res, next) => {
     res.send('test geht');
 })
-
-
-
-// router.get(`${apiRoute}/getusers`, user.getUsers);
-
-// router.put(`${apiRoute}/updateuser`, user.put);
-
-// router.post(`${apiRoute}/isauth`, loginView.isAuth);
-
-
 
 module.exports = router;
