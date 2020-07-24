@@ -29,7 +29,7 @@ exports.uploadFile = async(req, res) => {
     })
 }
 
-exports.deleteDbUpload = async(req, res, next) => {
+exports.deleteDbBeforeUploadParsed = async(req, res, next) => {
 
     console.log('_deleteDb gestartet 1 --> ');
     try {
@@ -129,7 +129,6 @@ const _writeCurrentFileToDatabase = async(dataItemArray, name, index, res) => {
                     INDEX2 = 0;
                     console.log('fertig  ----------------- > Server wird neu gestartet')
                     res.status(200).json({ statustext: 'Bier-Daten gespeichert und werden verarbeitet ! Prost !!', originalname: name })
-
                     setTimeout(() => {
                         process.exit(1)
                     }, 3500);

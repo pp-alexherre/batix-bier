@@ -17,7 +17,7 @@ router.get(`${apiRoute}/getchartsetitem`, chartsetData.getchartsetItem);
 
 router.put(`${apiRoute}/updatecountryItem`, metaData.updateCountryItem);
 
-router.post(`${apiRoute}/uploadfile`, fileUpload.deleteDbUpload, fileUpload.uploadFile);
+router.post(`${apiRoute}/uploadfile`, fileUpload.deleteDbBeforeUploadParsed, fileUpload.uploadFile);
 router.post(`${apiRoute}/deleteallentries`, fileUpload.deleteEntriesDb);
 
 router.get('/', (req, res, next) => {
