@@ -49,19 +49,25 @@ exports.deleteDbBeforeUploadParsed = async(req, res, next) => {
     } catch (err) { console.log('error deleteUpload --> ', err) }
 }
 
-exports.deleteEntriesDb = async(req, res) => {
+// alle Einträge löschen
+exports.deleteEntriesDb = async(req, res, next) => {
     beerModel.destroy({
         where: {},
         truncate: true
     }).then(
-        res.status(200).json({ message: 'alles gelöscht!', status: true })
-    ).then(
-        setTimeout(() => {
-            console.log('----> Server wird neu gestartet <-----')
-            process.exit(1);
-        }, 5000)
+        next()
     )
 }
+
+// nach löschen von Einträgen aus der Datenbank Response senden und Server neu starten
+exports.afterDeleteSendResponse = (req, res) => {
+    res.status(200).json({ message: 'alles gelöscht!', status: true });
+    setTimeout(() => {
+        console.log('----> Server wird neu gestartet <-----')
+        process.exit(1);
+    }, 5000)
+}
+
 
 // Daten aus der hochgeladenen Datei lesen
 const _readCurrentFileXML = async(filename, res, next) => {
