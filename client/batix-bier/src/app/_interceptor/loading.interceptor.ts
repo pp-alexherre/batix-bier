@@ -7,6 +7,7 @@ import { LoadingService } from '../_services/loading/loading.service';
 export class LoadingInterceptor implements HttpInterceptor {
 
     private requests: HttpRequest<any>[] = [];
+    private INIT_INDEX = 0;
 
     public removeRequest(req:HttpRequest<any>){
         const INDEX = this.requests.indexOf(req);
@@ -14,7 +15,10 @@ export class LoadingInterceptor implements HttpInterceptor {
         if( INDEX <= 0) {
             this.requests.splice(INDEX, 1 );
         }
-        this._loadingService.isLoading.next(this.requests.length > 0);
+        if( this.INIT_INDEX >= 4){
+          console.info('%c in der SUBSCRIPTION Weiche','color: #8fc01a');
+          this._loadingService.isLoading.next(this.requests.length > 0);
+        }
     }
 
     constructor ( private _loadingService: LoadingService) {}
@@ -22,27 +26,31 @@ export class LoadingInterceptor implements HttpInterceptor {
     public intercept( request: HttpRequest<any>, next: HttpHandler):Observable<HttpEvent<any>> {
 
         console.log('Request Interceptor -->', request);
-
+        
+        if( this.INIT_INDEX >= 4){
+          console.info('%c in der SUBSCRIPTION Weiche','color: #8fc01a');
+          this._loadingService.isLoading.next(true);
+        }
+        
         this.requests.push(request);
-        this._loadingService.isLoading.next(true);
-
         console.log('Requests Array -->', this.requests);
         return new Observable( observer => {
             const SUBSCRIPTION = next.handle(request).subscribe( event => {
                 console.log('SUBSCRIPTION Event --> ', event);
-                // if ( event instanceof HttpResponse ){
-                //     this.removeRequest(request);
-                //     observer.next(event);
-                //     console.log('remove requests --> ', request.url);
-                // }
-                this.uploadStateMessage(event, request);
+                this.INIT_INDEX++;
+                console.log('SUBSCRIPTION INIT_INDEX --> ', this.INIT_INDEX);
+                this.uploadProgressStateMessage(event, request);
                 observer.next(event);
             }, err => {
                 console.log('Error SUBSCRIPTION --> ', err);
             });
         });
     }
-    public uploadStateMessage(event: HttpEvent<any>, request){
+
+    // Helper Funktionen --------------------------------------------------------------------- //
+
+    // Upload Status
+    public uploadProgressStateMessage(event: HttpEvent<any>, request){
         switch (event.type){ 
     
           case HttpEventType.UploadProgress:
