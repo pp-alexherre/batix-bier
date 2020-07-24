@@ -74,7 +74,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-top: 20px;
+  margin-top: 40px;
   border: 10px solid #1a76ba;
   border-bottom: 10px solid #8fc01a;
   animation: spinner infinite ease-in-out 1000ms;
@@ -118,7 +118,7 @@
   font-family: 'Ubuntu Bold', sans-serif;
   font-weight: none;
   color: #003063;
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
   font-size: 12px;
   margin-left: -50px;
