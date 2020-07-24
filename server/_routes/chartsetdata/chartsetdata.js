@@ -43,9 +43,6 @@ const _filterChartsetData = async(itemsArray, res) => {
         let randomHex = `#${Math.floor(Math.random()*16777215).toString(16)}`;
         country = itemsArray[i]['country'];
         if (itemsArray[i]['country'].indexOf(country) !== -1) {
-            // if (itemsArray[i]['country'].indexOf('Germany') !== -1 ||
-            //     itemsArray[i]['country'].indexOf('Austria') !== -1 ||
-            //     itemsArray[i]['country'].indexOf('Switzerland') !== -1) {
             cacheCountry.push(itemsArray[i].country);
             if (itemsArray[i]['status']) {
                 if (internIndex < 9) {

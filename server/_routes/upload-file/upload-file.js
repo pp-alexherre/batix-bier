@@ -26,7 +26,6 @@ exports.uploadFile = async(req, res, next) => {
         }
         console.log('FileUpload gestartet --> ', req.file.mimetype);
         _readCurrentFileXML(req.file.originalname, res, next)
-
     })
 }
 
@@ -89,10 +88,8 @@ const _filterCurrentFile = async(dataArray, res, name, next) => {
         // if (dataItem.COUNTRY == 'Germany' || dataItem.COUNTRY == 'Austria' || dataItem.COUNTRY == 'Switzerland') {
         if (dataItem.ALCOHOLTYPE == 'Beer') {
             dataItemArray.push(dataItem)
-            console.log('_filterCurrentFile gestartet dataItemArray --> ', dataItemArray.length)
-                // console.log('_filterCurrentFile gestartet --> dataItem', dataItem.length)
             INDEX++;
-            console.log('_filterCurrentFile INDEX --> ', INDEX)
+            console.log('_filterCurrentFile --> ')
         }
         // }
     })
@@ -109,9 +106,7 @@ const _writeCurrentFileToDatabase = async(dataItemArray, name, index, res, next)
 
     dataItemArray.forEach(dataItem => {
 
-
         const flasche = Math.round(dataItem.Display * 40);
-
         if (cacheCountry !== `${dataItem.COUNTRY}`) {
             cacheCountry = `${dataItem.COUNTRY}`;
             groupID = groupID + 1;
@@ -131,21 +126,12 @@ const _writeCurrentFileToDatabase = async(dataItemArray, name, index, res, next)
                 console.log('index ---> ', index);
                 console.log('INDEX 2 ---> ', INDEX2);
                 if (INDEX2 >= index) {
-                    console.log('fertig  ----------------- > ')
+                    console.log('fertig  ----------------- > INDEX2 1', INDEX2)
+                    INDEX2 = 0;
+                    console.log('fertig  ----------------- > INDEX2 2', INDEX2)
                     res.status(200).json({ statustext: 'Bier-Daten gespeichert und werden verarbeitet ! Prost !!', originalname: name })
-                    setTimeout(() => {
-                        process.exit(1);
-                    }, 3000)
                 }
             })
-
         } catch (err) { console.error(`Error Write Database --> ${err}`) };
     })
-    console.log('fertig  ----------------- > ', INDEX2)
-    console.log('fertig  ----------------- > ', dataItemArray.length)
-}
-
-exports.sendResponse = async(req, res) => {
-    console.log('fertig  ----------------- > ')
-    res.status(200).json({ statustext: 'Bier-Daten gespeichert und werden verarbeitet ! Prost !!', originalname: name })
 }
