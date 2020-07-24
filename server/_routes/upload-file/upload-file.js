@@ -19,34 +19,16 @@ let RESPONSE;
 
 exports.uploadFile = async(req, res, next) => {
 
-
     RESPONSE = res;
-
-    // _readCurrentFileXML(req.file.originalname)
-
     upload(req, res, (err) => {
         if (err) {
             return res.status(501).json({ error: err });
         }
         console.log('FileUpload gestartet --> ', req.file.mimetype);
-        // req.file.mimetype == 'text/xml' ? (
-        //     _deleteDb(req, res),
         _readCurrentFileXML(req.file.originalname, res, next)
 
-        // ) : (
-        //     res.status(200).json({ statustext: `Dateiformat "${req.file.mimetype}" nicht korrekt ! Bierberechnung nicht möglich`, currentformat: req.file.mimetype })
-        // );
     })
 }
-
-// const _deleteDb = async(req, res) => {
-//     await beerModel.destroy({
-//         where: {},
-//         truncate: true
-//     })
-//     await _readCurrentFileXML(req.file.originalname)
-//     await res.status(200).json({ statustext: 'Bier-Daten gespeichert und werden verarbeitet ! Prost !!', originalname: req.file.originalname })
-// }
 
 exports.deleteDbUpload = async(req, res, next) => {
 
@@ -66,22 +48,6 @@ exports.deleteDbUpload = async(req, res, next) => {
             )
         })
     } catch (err) { console.log('error deleteUpload --> ', err) }
-
-
-
-
-
-    // req.file.mimetype == 'text/xml' ? (
-    //     await beerModel.destroy({
-    //         where: {},
-    //         truncate: true
-    //     }).then(
-    //         next()
-    //     )
-    // ) : (
-    //     res.status(200).json({ statustext: `Dateiformat "${req.file.mimetype}" nicht korrekt ! Bierberechnung nicht möglich`, currentformat: req.file.mimetype })
-    // );
-
 }
 
 exports.deleteEntriesDb = async(req, res) => {
@@ -119,9 +85,6 @@ let INDEX = 0;
 dataItemArray = [];
 const _filterCurrentFile = async(dataArray, res, name, next) => {
 
-    // console.log('_filterCurrentFile dataArray --> ', dataArray)
-
-
     dataArray.forEach(async dataItem => {
         // if (dataItem.COUNTRY == 'Germany' || dataItem.COUNTRY == 'Austria' || dataItem.COUNTRY == 'Switzerland') {
         if (dataItem.ALCOHOLTYPE == 'Beer') {
@@ -137,8 +100,8 @@ const _filterCurrentFile = async(dataArray, res, name, next) => {
 }
 let groupID = 0;
 let cacheCountry = 'init';
-
 let INDEX2 = 0;
+
 // gefilterte Daten in die Databank schreiben
 const _writeCurrentFileToDatabase = async(dataItemArray, name, index, res, next) => {
 
@@ -172,7 +135,7 @@ const _writeCurrentFileToDatabase = async(dataItemArray, name, index, res, next)
                     res.status(200).json({ statustext: 'Bier-Daten gespeichert und werden verarbeitet ! Prost !!', originalname: name })
                     setTimeout(() => {
                         process.exit(1);
-                    }, 5000)
+                    }, 3000)
                 }
             })
 
@@ -184,8 +147,5 @@ const _writeCurrentFileToDatabase = async(dataItemArray, name, index, res, next)
 
 exports.sendResponse = async(req, res) => {
     console.log('fertig  ----------------- > ')
-    setTimeout(() => {
-        res.status(200).json({ statustext: 'Bier-Daten gespeichert und werden verarbeitet ! Prost !!', originalname: name })
-    }, 15000)
-
+    res.status(200).json({ statustext: 'Bier-Daten gespeichert und werden verarbeitet ! Prost !!', originalname: name })
 }
