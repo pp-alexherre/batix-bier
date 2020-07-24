@@ -18,7 +18,7 @@ export class LoadingInterceptor implements HttpInterceptor {
             this._loadingService.isLoading.next(this.requests.length > 0);
         }
         if( this.INIT_INDEX >= 4){
-          console.info('%c in der SUBSCRIPTION Weiche','color: #8fc01a');
+          console.log('%c in der SUBSCRIPTION Weiche','color: #8fc01a');
           this._loadingService.isLoading.next(false);
         }
     }
