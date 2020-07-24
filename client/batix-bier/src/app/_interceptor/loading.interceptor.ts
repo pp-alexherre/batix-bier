@@ -12,12 +12,14 @@ export class LoadingInterceptor implements HttpInterceptor {
     public removeRequest(req:HttpRequest<any>){
         const INDEX = this.requests.indexOf(req);
         console.log('INDEX Interceptor --> ', INDEX)
+        console.log('INDEX Interceptor requests--> ', this.requests)
         if( INDEX <= 0) {
             this.requests.splice(INDEX, 1 );
+            this._loadingService.isLoading.next(this.requests.length > 0);
         }
         if( this.INIT_INDEX >= 4){
           console.info('%c in der SUBSCRIPTION Weiche','color: #8fc01a');
-          this._loadingService.isLoading.next(this.requests.length > 0);
+          this._loadingService.isLoading.next(false);
         }
     }
 
