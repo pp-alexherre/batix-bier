@@ -1,0 +1,46 @@
+@import "../fonts/fonts.css";
+.f_1stFont {
+  font-family: 'Ubuntu Regular', sans-serif;
+  font-weight: normal!important;
+}
+.f_1stFontItalic {
+  font-family: 'Ubuntu Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontLight {
+  font-family: 'Ubuntu Light', sans-serif;
+  font-weight: none;
+}
+.f_1stFontLightItalic {
+  font-family: 'Ubuntu Light Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontMedium {
+  font-family: 'Ubuntu Medium', sans-serif;
+  font-weight: none;
+}
+.f_1stFontMediumItalic {
+  font-family: 'Ubuntu Medium Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontBold {
+  font-family: 'Ubuntu Bold', sans-serif;
+  font-weight: none;
+}
+.f_1stFontBoldItalic {
+  font-family: 'Ubuntu Bold Italic', sans-serif;
+  font-weight: none;
+}
+.wrapper-country-liste {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.wrapper-country-liste ul {
+  list-style: none;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,109 @@
+@import '../_globalVariables.less';
+@import '../lib/animations.less';
+
+
+//Gradients
+.gradient1(@_element : background-image){
+	//grün
+	@{_element}: -moz-linear-gradient( 40deg, #1a76ba 0%, #1e528d 65%, #223466 100% );
+	@{_element}: -webkit-linear-gradient( 40deg, #1a76ba 0%, #1e528d 65%, #223466 100% );
+	@{_element}: -ms-linear-gradient( 40deg, #1a76ba 0%, #1e528d 65%, #223466 100% );
+	@{_element}: linear-gradient( 40deg, #1a76ba 0%, #1e528d 65%, #223466 100% );
+	// 16470e
+}
+// Text Gradient
+.textGradient1{
+	background: -webkit-linear-gradient( 40deg, #1a76ba 0%, #1e528d 65%, #223466 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+
+// Filter
+.filter(@_property, @_value){
+	filter: ~"@{_property}(@{_value})";
+	// Browser Specific
+	-webkit-filter: ~"@{_property}(@{_value})";
+	-moz-filter: ~"@{_property}(@{_value})";
+	-o-filter: ~"@{_property}(@{_value})";
+	-ms-filter: ~"@{_property}(@{_value})";
+}
+
+// Outline
+.outline{
+	color:@c_10th;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: @c_2nd;
+}
+
+.outlineWhite{
+	color:@c_2nd;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: @c_5th;
+}
+
+// Scrollbar
+.scrollbar1{
+	&::-webkit-scrollbar-track
+	{
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+		border-radius: 2px;
+		background-color: @c_1st;
+	}
+
+	&::-webkit-scrollbar
+	{
+		width: 6px;
+		background-color: @c_1st;
+	}
+
+	&::-webkit-scrollbar-thumb
+	{
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.1);
+		background-color:@c_2nd;
+	}
+}
+
+.scrollbar2{
+	&::-webkit-scrollbar-track
+	{
+		-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
+		border-radius: 2px;
+		background-color: @c_2nd;
+	}
+
+	&::-webkit-scrollbar
+	{
+		width: 6px;
+		// background-color: @c_2nd;
+		background-color: @c_2nd;
+	}
+
+	&::-webkit-scrollbar-thumb
+	{
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 1px rgba(255,255,255,0.1);
+		background-color:@c_5th;
+	}
+}
+
+// Shadows
+.shadow1{
+	-webkit-box-shadow: 10px 10px 45px 1px rgba(0,0,0,0.8);
+	-moz-box-shadow: 10px 10px 45px 1px rgba(0,0,0,0.8);
+	box-shadow: 10px 10px 45px 1px rgba(0,0,0,0.8);
+}
+
+.shadow2{
+	-webkit-box-shadow:   0px 46px 69px -30px rgba(0,0,0,0.85);
+	-moz-box-shadow:  0px 46px 69px -30px rgba(0,0,0,0.85);
+	box-shadow:  0px 46px 69px -30px rgba(0,0,0,0.85);
+}
+
+.shadow3{
+	-webkit-box-shadow: 10px 10px 45px 1px rgba(255,255,255,0.8);
+	-moz-box-shadow: 10px 10px 45px 1px rgba(255,255,255,0.8);
+	box-shadow: 10px 10px 45px 1px rgba(255,255,255,0.8);
+}
+

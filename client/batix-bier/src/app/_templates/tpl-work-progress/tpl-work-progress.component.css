@@ -1,0 +1,161 @@
+@import "../fonts/fonts.css";
+.f_1stFont {
+  font-family: 'Ubuntu Regular', sans-serif;
+  font-weight: normal!important;
+}
+.f_1stFontItalic {
+  font-family: 'Ubuntu Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontLight {
+  font-family: 'Ubuntu Light', sans-serif;
+  font-weight: none;
+}
+.f_1stFontLightItalic {
+  font-family: 'Ubuntu Light Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontMedium {
+  font-family: 'Ubuntu Medium', sans-serif;
+  font-weight: none;
+}
+.f_1stFontMediumItalic {
+  font-family: 'Ubuntu Medium Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontBold {
+  font-family: 'Ubuntu Bold', sans-serif;
+  font-weight: none;
+}
+.f_1stFontBoldItalic {
+  font-family: 'Ubuntu Bold Italic', sans-serif;
+  font-weight: none;
+}
+.pReset {
+  margin-bottom: 0;
+  line-height: 0;
+  font-size: 0;
+}
+.killFlex {
+  display: inline-block !important;
+  flex-direction: initial !important;
+  -webkit-flex-direction: initial;
+  -webkit-box-orient: initial;
+  align-items: initial !important;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  align-content: initial !important;
+  -webkit-align-content: initial;
+  justify-content: initial !important;
+  -webkit-justify-content: initial;
+  -webkit-box-pack: initial;
+  flex-wrap: initial !important;
+  -webkit-flex-wrap: initial;
+  -webkit-box-lines: initial;
+}
+.boxShadowOne {
+  -webkit-box-shadow: 10px 10px 48px -2px rgba(22, 71, 14, 0.56);
+  -moz-box-shadow: 10px 10px 48px -2px rgba(22, 71, 14, 0.56);
+  box-shadow: 10px 10px 48px -2px rgba(22, 71, 14, 0.56);
+}
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: 1100;
+}
+:host div.spinner-loading {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 20px;
+  border: 10px solid #1a76ba;
+  border-bottom: 10px solid #8fc01a;
+  animation: spinner infinite ease-in-out 1000ms;
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -moz-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -o-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -ms-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(1.2) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -moz-transform: rotate(180deg) scale(1.2) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -o-transform: rotate(180deg) scale(1.2) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -ms-transform: rotate(180deg) scale(1.2) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    transform: rotate(180deg) scale(1.2) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -moz-transform: rotate(360deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -o-transform: rotate(360deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -ms-transform: rotate(360deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    transform: rotate(360deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+:host span {
+  font-family: 'Ubuntu Bold', sans-serif;
+  font-weight: none;
+  color: #003063;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  margin-left: -50px;
+  animation: text infinite ease-in-out 1000ms;
+}
+@keyframes text {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -moz-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -o-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -ms-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  50% {
+    -webkit-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -moz-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -o-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -ms-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -moz-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -o-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -ms-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(-50%) translateY(0px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}

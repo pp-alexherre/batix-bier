@@ -1,0 +1,13 @@
+<div class="wrapper-box">
+    <h6>Upload File</h6>
+    <p>Es werden Daten im <strong>XML</strong> Format erwartet und sie müssen den kompletten Datennsatz ( mit allen Jahren ) enthalten. <br>Datei auswählen und dann uploaden. <br><br>Auf gehts ;-)</p>
+    <div class="wrapper-form">
+        <input type="file" (change)="onSelectFile($event)" />
+        <button type="button" (click)="onUploadFile($event)">upload File</button>
+        <span class="progress-bar" [ngStyle]="{'width': progressBarWidth + '%'}"></span>
+        <span class="done" *ngIf="progressStatusInfoText">{{ progressStatusText }}</span>
+    </div>
+    <div class="wrapper-button-close">
+        <button class="close" (click)="closeBox()">schließen</button>
+    </div>
+</div>

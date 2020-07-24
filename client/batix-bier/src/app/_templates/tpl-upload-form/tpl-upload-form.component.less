@@ -1,0 +1,76 @@
+@import './../../../assets/less/_globalVariables.less';
+@import './../../../assets/less/lib/classes.less';
+
+
+.wrapper-box{
+
+    position: relative;
+    display:block;
+    width:100%;
+    height:100%;
+
+    h6{
+        .f_1stFontBold;
+        .textGradient1;
+        display:inline-block;
+         color: @c_2nd;
+         font-size: ( @f_mainSize * 3 );
+         margin-top: 0;
+         margin-bottom: @p_main;
+    }
+    p{
+        margin-top:0;
+        margin-bottom: ( @p_main * 2 );
+    }
+    
+    button{
+    
+        .f_1stFontBold;
+        text-transform: uppercase;
+        padding: ( @p_main / 2 ) ( @p_main );
+        background-color: @c_3rd;
+        border-radius: 10px;
+        cursor:pointer;
+    }
+    
+    .wrapper-form{
+    
+        button{
+            color: @c_5th;
+        }
+        
+        .progress-bar{
+        
+            display:block;
+            height: 5px;
+            width:100%;
+            background-color: @c_2nd;
+            margin-top: @p_main;
+        }
+        span.done{
+        
+            .f_1stFontBold;
+            color: @c_1st;
+            display: inline-block;
+            width:100%;
+            text-align:center;
+            margin-top: 150px;
+            margin-bottom: 100px;
+            padding-top: ( @p_main * 2 );
+            font-size: ( @f_mainSize * 1.25 );
+        }
+    }
+    
+    .wrapper-button-close{
+    
+        display:block;
+        position: absolute;
+        bottom: 0;
+        right:0;
+    
+        button{
+            background-color: @c_2nd;
+            color: @c_5th;
+        }
+    }
+}

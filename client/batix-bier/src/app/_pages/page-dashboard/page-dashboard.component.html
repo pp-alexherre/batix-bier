@@ -1,0 +1,16 @@
+<div class="wrapper-content">
+    <h1>Bier Dashboard</h1>
+    <div class="wrapper-button">
+        <div>
+            <span class="delete" (click)="onDeleteDatabaseEntries()" tooltip="nur im Admin bereich" flow="down">löschen</span>
+        </div>
+        <div>
+            <span (click)="openUploadBox()" tooltip="nur im Admin bereich." flow="down">Upload File</span>
+        </div>
+    </div>
+</div>
+<div class="section-one">
+    <div class="wrapper-content">
+        <bx-section-chart></bx-section-chart>
+    </div>
+</div>

@@ -1,0 +1,237 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../fonts/fonts.css";
+.f_1stFont {
+  font-family: 'Ubuntu Regular', sans-serif;
+  font-weight: normal!important;
+}
+.f_1stFontItalic {
+  font-family: 'Ubuntu Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontLight {
+  font-family: 'Ubuntu Light', sans-serif;
+  font-weight: none;
+}
+.f_1stFontLightItalic {
+  font-family: 'Ubuntu Light Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontMedium {
+  font-family: 'Ubuntu Medium', sans-serif;
+  font-weight: none;
+}
+.f_1stFontMediumItalic {
+  font-family: 'Ubuntu Medium Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontBold {
+  font-family: 'Ubuntu Bold', sans-serif;
+  font-weight: none;
+}
+.f_1stFontBoldItalic {
+  font-family: 'Ubuntu Bold Italic', sans-serif;
+  font-weight: none;
+}
+.pReset {
+  margin-bottom: 0;
+  line-height: 0;
+  font-size: 0;
+}
+.killFlex {
+  display: inline-block !important;
+  flex-direction: initial !important;
+  -webkit-flex-direction: initial;
+  -webkit-box-orient: initial;
+  align-items: initial !important;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  align-content: initial !important;
+  -webkit-align-content: initial;
+  justify-content: initial !important;
+  -webkit-justify-content: initial;
+  -webkit-box-pack: initial;
+  flex-wrap: initial !important;
+  -webkit-flex-wrap: initial;
+  -webkit-box-lines: initial;
+}
+.boxShadowOne {
+  -webkit-box-shadow: 10px 10px 48px -2px rgba(22, 71, 14, 0.56);
+  -moz-box-shadow: 10px 10px 48px -2px rgba(22, 71, 14, 0.56);
+  box-shadow: 10px 10px 48px -2px rgba(22, 71, 14, 0.56);
+}
+html {
+  display: block;
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+body {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  display: block;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  font-size: 16px;
+}
+body .wrapper-content {
+  display: block;
+  width: 1400px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1450px) {
+  body .wrapper-content {
+    width: 1060px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  body .wrapper-content {
+    width: 860px;
+  }
+}
+@media screen and (max-width: 780px) {
+  body .wrapper-content {
+    width: 620px;
+  }
+}
+@media screen and (max-width: 460px) {
+  body .wrapper-content {
+    width: 320px;
+  }
+}
+::selection {
+  background-color: #3CAB33;
+  color: #fff;
+}
+router-outlet ~ * {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+app-root {
+  margin: 0;
+  padding: 0;
+  background-color: #3CAB33;
+}
+* {
+  box-sizing: 20px !important;
+}
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: 0!important;
+}
+input {
+  outline: none;
+}
+.wrapper-body {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+h1 {
+  font-family: 'Ubuntu Bold', sans-serif;
+  margin-top: 0;
+  color: #3CAB33;
+  text-align: center;
+  font-weight: none;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Ubuntu Regular", sans-serif;
+}
+#buchungstool {
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 10000000;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -moz-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -o-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -ms-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+#buchungstool .wrapper-content {
+  margin-top: 25%;
+  min-height: 630px;
+  -webkit-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -moz-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -o-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -ms-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+#buchungstool .wrapper-content #booking-tool-container-apartment521067 {
+  min-height: 630px;
+}
+@media screen and (max-width: 780px) {
+  #buchungstool .wrapper-content {
+    -webkit-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0);
+    -moz-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0);
+    -o-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0);
+    -ms-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0);
+    transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+#buchungstool.active {
+  display: block;
+}
+#buchungstool.inactive {
+  display: none;
+}
+#buchungstool span#bgBuchungstool {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+@media screen and (max-width: 780px) {
+  #buchungstool span#bgBuchungstool {
+    height: 250%;
+  }
+}
+@media screen and (max-width: 460px) {
+  #buchungstool span#bgBuchungstool {
+    height: 200%;
+  }
+}

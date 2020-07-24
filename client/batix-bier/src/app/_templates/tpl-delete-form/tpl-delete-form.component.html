@@ -1,0 +1,9 @@
+<h3>Chart löschen</h3>
+<p>möchten sie wirklich dieses Auswertung löschen? Hierbei wird auch die Datanbank gelöscht!<br><br> Wirklich Fortfahren ?</p>
+<span class="msg-server" *ngIf="statusMsgBox">
+  <h4>{{statusServerMsg}}</h4>
+</span>
+<div class="wrapper-button">
+    <button type="button" (click)="onDelete()">okay</button>
+    <button type="button" class="close" (click)="closeBox()">schließen</button>
+</div>

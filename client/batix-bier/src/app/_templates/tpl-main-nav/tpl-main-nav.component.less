@@ -1,0 +1,34 @@
+@import './../../../assets/less/_globalVariables.less';
+@import './../../../assets/less/lib/classes.less';
+@import './../../../assets/less/lib/animations.less';
+
+.wrapper-content{
+
+    ul{
+
+        .displayFlex(row);
+
+        margin:0;
+        padding:0;
+        padding-top: ( @p_main * 2 );
+        list-style:none;
+
+        li{
+            a{
+
+                .f_1stFontBold;
+                text-decoration: none;
+                text-transform:uppercase;
+                color: @c_8th;
+
+                .standardAnimation(@_time: 250ms);
+            }
+            
+            &:hover{
+                a{
+                    color: @c_2nd;
+                }
+            }
+        }
+    }
+}

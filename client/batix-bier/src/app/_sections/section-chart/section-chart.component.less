@@ -1,0 +1,42 @@
+@import './../../../assets/less/_globalVariables.less';
+@import './../../../assets/less/lib/functions.less';
+
+.col-header{
+    
+    display:block;
+    width:100%;
+
+    .wrapper-chart-line, .wrapper-chart-balken{
+
+        display:block;
+        width:100%;
+        margin-bottom:  @p_main ;
+        position: relative;
+
+        canvas{
+            width:100%;
+        }
+        &:before{
+            content:" ";
+            position: absolute;
+            display:block;
+            top: 50%;
+            left: -( @p_main * 2.5 );
+            width:57px;
+            height:80px;
+            background-color: @c_2nd;
+            -webkit-mask: url('./../../../assets/svg/icon-bier.svg');
+            mask-image: url('./../../../assets/svg/icon-bier.svg');
+
+            .transform2d(@translateY: -50%);
+
+            @media screen and ( max-width: @q_3rd){
+                width:23px;
+                height:33px;
+                left: -@p_main;
+                .transform2d(@translateY: -25%);
+            }
+        }
+    }
+}
+

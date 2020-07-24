@@ -1,0 +1,114 @@
+@import "../fonts/fonts.css";
+.f_1stFont {
+  font-family: 'Ubuntu Regular', sans-serif;
+  font-weight: normal!important;
+}
+.f_1stFontItalic {
+  font-family: 'Ubuntu Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontLight {
+  font-family: 'Ubuntu Light', sans-serif;
+  font-weight: none;
+}
+.f_1stFontLightItalic {
+  font-family: 'Ubuntu Light Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontMedium {
+  font-family: 'Ubuntu Medium', sans-serif;
+  font-weight: none;
+}
+.f_1stFontMediumItalic {
+  font-family: 'Ubuntu Medium Italic', sans-serif;
+  font-weight: none;
+}
+.f_1stFontBold {
+  font-family: 'Ubuntu Bold', sans-serif;
+  font-weight: none;
+}
+.f_1stFontBoldItalic {
+  font-family: 'Ubuntu Bold Italic', sans-serif;
+  font-weight: none;
+}
+.pReset {
+  margin-bottom: 0;
+  line-height: 0;
+  font-size: 0;
+}
+.killFlex {
+  display: inline-block !important;
+  flex-direction: initial !important;
+  -webkit-flex-direction: initial;
+  -webkit-box-orient: initial;
+  align-items: initial !important;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  align-content: initial !important;
+  -webkit-align-content: initial;
+  justify-content: initial !important;
+  -webkit-justify-content: initial;
+  -webkit-box-pack: initial;
+  flex-wrap: initial !important;
+  -webkit-flex-wrap: initial;
+  -webkit-box-lines: initial;
+}
+.boxShadowOne {
+  -webkit-box-shadow: 10px 10px 48px -2px rgba(22, 71, 14, 0.56);
+  -moz-box-shadow: 10px 10px 48px -2px rgba(22, 71, 14, 0.56);
+  box-shadow: 10px 10px 48px -2px rgba(22, 71, 14, 0.56);
+}
+.col-header {
+  display: block;
+  width: 100%;
+}
+.col-header .wrapper-chart-line,
+.col-header .wrapper-chart-balken {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+.col-header .wrapper-chart-line canvas,
+.col-header .wrapper-chart-balken canvas {
+  width: 100%;
+}
+.col-header .wrapper-chart-line:before,
+.col-header .wrapper-chart-balken:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: -50px;
+  width: 57px;
+  height: 80px;
+  background-color: #1a76ba;
+  -webkit-mask: url('../../../assets/svg/icon-bier.svg');
+  mask-image: url('../../../assets/svg/icon-bier.svg');
+  -webkit-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -moz-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -o-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -ms-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-50%);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+@media screen and (max-width: 780px) {
+  .col-header .wrapper-chart-line:before,
+  .col-header .wrapper-chart-balken:before {
+    width: 23px;
+    height: 33px;
+    left: -20px;
+    -webkit-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-25%);
+    -moz-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-25%);
+    -o-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-25%);
+    -ms-transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-25%);
+    transform: rotate(0deg) scale(1) skewX(0deg) skewX(0deg) translateX(0px) translateY(-25%);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}

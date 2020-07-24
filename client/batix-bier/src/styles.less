@@ -1,0 +1,159 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/less/_globalVariables';
+@import './assets/less/lib/functions';
+
+html{
+	display:block;
+	min-height: 100%;
+	min-width:100%;
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+} 
+
+body{
+	min-height: 100%;
+	width:100%;
+	overflow: hidden;
+	overflow-y: auto;
+	display:block;
+	background-color: @c_5th;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	z-index: 0;
+	padding: 0;
+	margin: 0;
+	min-width: 100%;
+    font-size: @f_mainSize;
+    
+    .wrapper-content{
+        
+        display:block;
+        width: @s_1stMainWrapper;
+		margin: 0 auto;
+		
+		@media screen and (max-width: @q_1st){
+			width: @s_2ndMainWrapper;
+		}
+		@media screen and (max-width: @q_2nd){
+			width: @s_3rdMainWrapper;
+		}
+		@media screen and (max-width: @q_3rd){
+            width: @s_4thMainWrapper;        
+		}
+		@media screen and (max-width: @q_4th){
+            width: @s_5thMainWrapper;
+        }
+    }
+}
+
+::selection{
+	background-color: @c_2nd;
+	color: @c_5th;
+}
+
+router-outlet~* {
+	display:block;
+    width: 100%;
+	height: 100%;
+}
+
+app-root{
+
+	margin:0;
+	padding:0;
+	background-color: @c_2nd;
+}
+
+*{
+	box-sizing: @p_main!important;
+}
+
+button{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	outline: none;
+	border:0!important;
+}
+
+input{
+	outline:none;
+}
+
+.wrapper-body{
+	display:block;
+	width:100%;
+	margin: 0 auto;
+}
+
+h1{
+	.f_1stFontBold;
+
+	margin-top: 0; 
+	color: @c_2nd;
+	text-align: center;
+	font-weight:none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Ubuntu Regular", sans-serif;  }
+
+#buchungstool{
+
+	position: fixed;
+	top:50%;
+	width:100%;
+	height:100%;
+	z-index: 10000000;
+	overflow:hidden;
+	overflow-y: auto;
+
+	.transform2d(@translateY: -50%);
+
+	.wrapper-content{
+
+		margin-top: 25%;
+		min-height:630px;
+		.transform2d(@translateY: -50%);
+
+		#booking-tool-container-apartment521067{
+			min-height:630px;
+		}
+		@media screen and(max-width: @q_3rd){
+			.transform2d(@translateY: 0);
+		}
+	}
+
+	&.active{
+		display:block;
+	}
+	&.inactive{
+		display:none
+	}
+	span#bgBuchungstool{
+		display:block;
+		position: absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		z-index:-1;
+		background-color: rgba(0,0,0,0.8);
+
+		@media screen and(max-width: @q_3rd){
+			height:250%;
+		}
+		@media screen and(max-width: @q_4th){
+			height:200%;
+		}
+	}
+}

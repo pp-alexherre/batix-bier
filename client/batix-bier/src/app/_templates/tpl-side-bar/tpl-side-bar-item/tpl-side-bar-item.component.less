@@ -1,0 +1,37 @@
+@import './../../../../assets/less/_globalVariables.less';
+@import './../../../../assets/less/lib/animations.less';
+@import './../../../../assets/less/lib/classes.less';
+
+span{
+    
+    display:inline-block;
+    width: calc(~"100% - 40px");
+    padding: (@p_main / 2 );
+    background-color: @c_5th;
+    margin-top: ( @p_main / 2 );
+    border-radius: 10px;
+    opacity: 0.65;
+    cursor:pointer;
+
+    .standardAnimation(@_time: 150ms);
+
+    p{
+        .f_1stFontBold;
+        margin:0;
+        text-align:center;
+        padding:0;
+        color:@c_2nd;
+        font-size:( @f_mainSize * 0.85);
+    }
+    &.active{
+        opacity: 1;
+        background-color: @c_3rd;
+        p{
+            color: @c_5th;
+        }
+    }
+    &:hover{
+        opacity: 1;
+    }
+}
+

@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="app-content">
+    <div class="div-wrapper-nav">
+        <bx-tpl-main-nav></bx-tpl-main-nav>
+    </div>
+    <div class="overlay-box" *ngIf="statusOverlay">
+        <div class="content-overlay">
+            <bx-tpl-overlay [statusUploadBox]="statusUploadBox$" [statusDeleteBox]="statusDeleteBox$"></bx-tpl-overlay>
+        </div>
+        <span class="bg-overlay" (click)="closeUploadBox()"></span>
+    </div>
+    <div class="wrapper-side-bar" [class.open]="statusSideBar" [class.close]="!statusSideBar">
+        <span class="banner" (click)="statusSideBar=!statusSideBar"></span>
+        <h3>Bitte wählen Sie ein Land</h3>
+        <div class="wrapper-sidebar">
+            <bx-tpl-side-bar></bx-tpl-side-bar>
+        </div>
+    </div>
+    <bx-tpl-work-progress *ngIf="_loadingService.loadingStatus"></bx-tpl-work-progress>
+    <span class="overlay-close" [class.open]="statusSideBar" [class.close]="!statusSideBar" (click)="statusSideBar=!statusSideBar"></span>
+    <router-outlet></router-outlet>
+</div>

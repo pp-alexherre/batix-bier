@@ -1,0 +1,150 @@
+
+// -- Font Import
+@import "../fonts/fonts.css";
+
+// --- Fonts
+@f_mainSize			: 16px;
+@f_mainLineHeight	: 160%;
+
+.f_1stFont {
+	font-family: 'Ubuntu Regular', sans-serif;
+	font-weight:normal!important;
+}
+
+.f_1stFontItalic {
+	font-family: 'Ubuntu Italic', sans-serif;
+	font-weight:none;
+}
+
+.f_1stFontLight {
+	font-family: 'Ubuntu Light', sans-serif;
+	font-weight:none;
+}
+
+.f_1stFontLightItalic {
+	font-family: 'Ubuntu Light Italic', sans-serif;
+	font-weight:none;
+}
+
+.f_1stFontMedium {
+	font-family: 'Ubuntu Medium', sans-serif;
+	font-weight:none;
+}
+
+.f_1stFontMediumItalic {
+	font-family: 'Ubuntu Medium Italic', sans-serif;
+	font-weight:none;
+}
+
+.f_1stFontBold {
+	font-family: 'Ubuntu Bold', sans-serif;
+	font-weight:none;
+}
+
+.f_1stFontBoldItalic {
+	font-family: 'Ubuntu Bold Italic', sans-serif;
+	font-weight:none;
+}
+   
+    
+    // -- Colors
+	@c_1st		: #003063;		// Zierfarbe Eins
+	@c_2nd		: #1a76ba;		// Zierfarbe Zwei
+	@c_3rd		: #8fc01a;		// Zierfarbe Drei
+	@c_4th		: #edeff2;		// hell hell grau
+	@c_5th		: #fff;			//
+	@c_6th		: #000;	        //
+	@c_7th 		: #fc033d;		// Dunkel Grau
+	@c_8th		: #555555;		//
+	@c_9th      : #c8c8c8;       //
+	@c_10th     : transparent ;  //
+
+
+	// --- Widths & Heights
+	@w_page				: 100%;                   // Breite des Seiten Wrappers
+	@w_wrapper			: 100%;		              // Breite des Inneren Content Wrappers
+
+	@s_width_fullscreen :100%;
+	@s_height_fullscreen:100%;
+	@s_width_big        :300px;                     // Logo Höhe Groß
+	@s_height_big       :300px;                     // Logo Breite Groß
+	@s_width_small      :100px;                     // Logo Höhe Klein
+	@s_height_small     :100px;                     // LOgo Breite Klein
+	@s_monitor_height	:1080px;					// Monitor Screen Höhe
+	@s_monitor_width	:1920px;					// Monitor Screen Breite
+
+	@r_borderRadius     : @m_main / 2;            // Standard Border-Radius
+
+	@w_header			: 100%;		                // Breite des Headers
+
+	@w_slideshow		: @w_header;	            // Breite der Header Slideshow
+	@h_slideshow		: 380px;		            // Höhe der Slideshow
+
+	@w_sidebarFirst		: 24%;			            // Breite Sidebar First
+	@w_sidebarSecond	: 20%;			            // Breite Sidebar Second
+
+	@w_pageArea			: 100%;			            // Breite der Gesamten Page Area
+
+	// --- Margins
+	@m_main			    : 10px;				        // Standard Margin
+	@m_block		    : 10px;			            // Margin für Blöcke
+	@m_headlines    	: (@m_main / 1.4);	        // Margin für Headlines (Ausgehend von h1)
+
+	// --- Paddings
+	@p_main				: 20px;		                // Standard Padding
+	@p_block			: @p_main;
+
+	// --- Responsive Angaben
+	@r_status           : false;          //Responsive einschalten
+
+
+	//Textgrößen
+	@r_fontSizeText     : 15px;          //Textgröße
+	@r_fontSizeH1       : 27px;          //Responsive H1
+	@r_fontSizeH2       : 20px;          //Responsive H2
+	@r_fontSizeH3       : 17px;          //Responsive H3
+	@r_fontSizeH4       : 15px;          //Responsive H4
+	@r_fontSizeH5       : 15px;          //Responsive H5
+	@r_fontSizeH6       : 15px;          //Responsive H6
+
+// Video Variablen
+
+@track-color: @c_1st;
+@thumb-color: @c_5th;
+
+@thumb-radius: 50%;
+@thumb-height: 30px;
+@thumb-width: 30px;
+@thumb-shadow-size: 1px;
+@thumb-shadow-blur: 1px;
+@thumb-shadow-color: #111;
+@thumb-border-width: 1px;
+@thumb-border-color: white;
+
+@track-width: 100%;
+@track-height: 1px;
+@track-shadow-size: 2px;
+@track-shadow-blur: 2px;
+@track-shadow-color: #222;
+@track-border-width: 1px;
+@track-border-color: black;
+
+@track-radius: 5px;
+@contrast: 5%;
+@animationTime: 250ms;
+
+@s_1stMainWrapper	: 1400px;					// HauptWrapper
+@s_2ndMainWrapper	: 1060px;					// HauptWrapper
+@s_3rdMainWrapper	: 860px;					// HauptWrapper
+@s_4thMainWrapper	: 620px;					// HauptWrapper
+@s_5thMainWrapper	: 320px;					// HauptWrapper
+
+// Media Querys
+@q_1st     		: 1450px;
+@q_2nd     		: 1100px;
+@q_3rd			: 780px;
+@q_4th			: 460px;
+@q_top_1st		: 38%;
+@q_height_1st	: 65%;
+
+@q_scale_1st	: 65;

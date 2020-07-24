@@ -1,0 +1,9 @@
+<div class="col-header">
+    <p>Label links Einheit in Flaschen (1 Flasche a 0.5 Liter)</p>
+    <div class="wrapper-chart-line">
+        <canvas id="canvas" baseChart [datasets]="chartDataSet" [labels]="years" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="chartTypeLine"></canvas>
+    </div>
+    <div class="wrapper-chart-balken">
+        <canvas id="canvas2" baseChart [datasets]="chartDataSet" [labels]="years" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="chartTypeBalken"></canvas>
+    </div>
+</div>

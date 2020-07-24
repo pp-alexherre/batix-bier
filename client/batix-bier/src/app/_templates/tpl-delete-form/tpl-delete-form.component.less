@@ -1,0 +1,45 @@
+@import './../../../assets/less/_globalVariables.less';
+@import './../../../assets/less/lib/classes.less';
+
+h3{
+    .f_1stFontBold;
+    .textGradient1;
+    display:inline-block;
+    font-size:( @f_mainSize * 3 );
+    margin-bottom: @p_main ;
+    margin-top: 0 ;
+
+}
+.msg-server{
+
+    display:block;
+    margin-top:( @p_main * 2 );
+    margin-bottom:( @p_main * 2 );
+
+    h4{
+        .f_1stFontBold;
+        font-size: ( @f_mainSize * 1.25 );
+        margin-bottom: ( @p_main * 2 );
+        margin-top: 0;
+        color: @c_1st;
+    }
+}
+
+.wrapper-button{
+    button{
+    
+        .f_1stFontBold;
+        display:inline-block;
+        text-transform: uppercase;
+        padding: ( @p_main / 2 ) ( @p_main );
+        background-color: @c_2nd;
+        color: @c_5th;
+        border-radius: 10px;
+        cursor:pointer;
+
+        &.close{
+            background-color: @c_1st;
+            margin-left: @p_main;
+        }
+    }
+}

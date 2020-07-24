@@ -1,0 +1,207 @@
+// #############################################################################  FUNCTIONS ##########################################################
+// Blocksteuerung
+
+
+// FLexbox
+.displayFlex(@_direction){
+	display: box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	& when (@_direction = row) {
+		-webkit-box-orient: horizontal;
+	}
+
+	& when (@_direction = column) {
+		-webkit-box-orient: vertical;
+	}
+	
+	-ms-flex-direction: @_direction;
+	-webkit-flex-direction: @_direction;
+	flex-direction: @_direction;
+}
+
+.alignItems(@_align){
+	
+	-ms-flex-align: @_align;
+	
+	& when (@_align = flex-start) {
+		-ms-flex-align: start;
+	}
+	
+	& when (@_align = flex-end) {
+		-ms-flex-align: end;
+	}
+	
+	-webkit-box-align: @_align;
+	-webkit-align-items: @_align;
+	align-items: @_align;
+}
+
+.alignContent(@_align){
+	-webkit-align-content: @_align;
+	align-content: @_align;
+}
+
+.justifyContent(@_justify){
+	& when (@_justify = flex-start) {
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+	}
+
+	& when (@_justify = flex-end) {
+		-webkit-box-pack: end;
+		-ms-flex-pack: end;
+	}
+
+	& when (@_justify = center) {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+	}
+
+	& when (@_justify = space-between) {
+		-webkit-box-pack: justify ;
+		-ms-flex-pack: justify;
+	}
+
+	& when (@_justify = space-around) {
+		-webkit-box-pack: justify ;
+		-ms-flex-pack: justify;
+	}	
+
+	-webkit-justify-content: @_justify;
+	justify-content: @_justify;
+}
+
+.flexWrap(@_wrap){
+	& when (@_wrap = nowrap) {
+		-webkit-box-lines: single;
+		-ms-flex-wrap: none;
+	}
+
+	& when (@_wrap = wrap ) {
+		-webkit-box-lines: multiple;
+		-ms-flex-wrap: wrap;
+	}
+
+	& when (@_wrap = wrap-reverse) {
+		-webkit-box-lines: multiple;
+		-ms-flex-wrap: wrap-reverse;
+	}
+
+	-webkit-flex-wrap: @_wrap;
+	flex-wrap: @_wrap;
+}
+
+.alignSelf(@_align-self){
+	-webkit-box-align-self: @_align-self;
+	-webkit-align-self: @_align-self;
+	align-self: @_align-self;
+}
+
+
+.flex(@_grow: 1, @_shrink: 1, @_basis: auto){
+	-webkit-box-flex: @_grow;
+	-moz-box-flex: @_grow;
+	-webkit-flex: @_grow @_shrink @_basis;
+	-ms-flex: @_grow @_shrink @_basis;
+	flex: @_grow @_shrink @_basis;	
+}
+
+// Sonstige Helper Funktionen
+.roundedCorners(@_topLeft : 0px, @_topRight : 0px, @_bottomLeft : 0px, @_bottomRight : 0px){
+	border-top-left-radius: @_topLeft;
+	border-top-right-radius: @_topRight;
+	border-bottom-left-radius: @_bottomLeft;
+	border-bottom-right-radius: @_bottomRight;
+}
+
+.roundedCorners(@_topLeft){
+	 border-radius: @_topLeft;
+}
+
+// Reset Funktionen
+.pReset{
+	margin-bottom: 0;
+	line-height: 0;
+	font-size: 0;
+}
+
+.killFlex{
+	display: inline-block !important;
+	 
+	flex-direction: initial !important;
+	-webkit-flex-direction: initial;
+	-webkit-box-orient: initial;
+	  
+	align-items: initial !important;
+	-webkit-align-items: initial;
+	-webkit-box-align: initial;
+	
+	align-content: initial !important;
+	-webkit-align-content: initial;
+	
+	
+	justify-content: initial !important;
+	-webkit-justify-content: initial;
+	    -webkit-box-pack: initial;
+	    
+	flex-wrap: initial !important;
+	-webkit-flex-wrap: initial;
+	-webkit-box-lines: initial;
+}
+
+
+
+
+// Rotate
+.transformRotate(@_degress, @_origin: center center){
+	-moz-transform: rotate(@_degress);
+	-ms-transform: rotate(@_degress);
+	-o-transform: rotate(@_degress);
+	-webkit-transform: rotate(@_degress);
+	transform: rotate(@_degress);
+	-ms-transform-origin: @_origin;
+	-webkit-transform-origin: @_origin;
+	-moz-transform-origin: @_origin;
+	-o-transform-origin: @_origin;
+	transform-origin: @_origin;
+
+}
+
+.boxShadowOne{
+	-webkit-box-shadow: 10px 10px 48px -2px rgba(22,71,14,0.56);
+	-moz-box-shadow: 10px 10px 48px -2px rgba(22,71,14,0.56);
+	box-shadow: 10px 10px 48px -2px rgba(22,71,14,0.56);
+}
+
+// Filter
+.filter(@_property, @_value){
+	filter: ~"@{_property}(@{_value})";
+	// Browser Specific
+	-webkit-filter: ~"@{_property}(@{_value})";
+	-moz-filter: ~"@{_property}(@{_value})";
+	-o-filter: ~"@{_property}(@{_value})";
+	-ms-filter: ~"@{_property}(@{_value})";
+}
+
+.transform2d (@rotate: 0deg, @scale: 1, @skewX: 0deg, @skewY: 0deg, @translateX: 0px, @translateY: 0px) {
+	 -webkit-transform: rotate(@rotate) scale(@scale) skewX(@skewX) skewX(@skewX) translateX(@translateX) translateY(@translateY);
+	 -moz-transform: rotate(@rotate) scale(@scale) skewX(@skewX) skewX(@skewX) translateX(@translateX) translateY(@translateY);
+	 -o-transform: rotate(@rotate) scale(@scale) skewX(@skewX) skewX(@skewX) translateX(@translateX) translateY(@translateY);
+	 -ms-transform: rotate(@rotate) scale(@scale) skewX(@skewX) skewX(@skewX) translateX(@translateX) translateY(@translateY);
+	 transform: rotate(@rotate) scale(@scale) skewX(@skewX) skewX(@skewX) translateX(@translateX) translateY(@translateY);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility:    hidden;
+	-ms-backface-visibility:     hidden;
+	backface-visibility:         hidden;
+}
+
+.transform3d (@rotateX: 0deg, @rotateY: 0deg, @rotateZ: 0deg, @scaleX: 1, @scaleY: 1, @scaleZ: 1, @translateX: 0px, @translateY: 0px, @translateZ: 0px) {
+	 -webkit-transform: rotateX(@rotateX) rotateY(@rotateY) rotateX(@rotateZ) scaleX(@scaleX) scaleY(@scaleY) scaleZ(@scaleZ) translateX(@translateX) translateY(@translateY) translateZ(@translateZ);
+	 -moz-transform: rotateX(@rotateX) rotateY(@rotateY) rotateX(@rotateZ) scaleX(@scaleX) scaleY(@scaleY) scaleZ(@scaleZ) translateX(@translateX) translateY(@translateY) translateZ(@translateZ);
+	 -o-transform: rotateX(@rotateX) rotateY(@rotateY) rotateX(@rotateZ) scaleX(@scaleX) scaleY(@scaleY) scaleZ(@scaleZ) translateX(@translateX) translateY(@translateY) translateZ(@translateZ);
+	 -ms-transform: rotateX(@rotateX) rotateY(@rotateY) rotateX(@rotateZ) scaleX(@scaleX) scaleY(@scaleY) scaleZ(@scaleZ) translateX(@translateX) translateY(@translateY) translateZ(@translateZ);
+	 transform: rotateX(@rotateX) rotateY(@rotateY) rotateX(@rotateZ) scaleX(@scaleX) scaleY(@scaleY) scaleZ(@scaleZ) translateX(@translateX) translateY(@translateY) translateZ(@translateZ);
+}
