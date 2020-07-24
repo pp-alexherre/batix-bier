@@ -132,7 +132,7 @@ const _writeCurrentFileToDatabase = async(dataItemArray, name, index, res) => {
 
                     setTimeout(() => {
                         process.exit(1)
-                    }, 3000);
+                    }, 3500);
                 }
             })
         } catch (err) { console.error(`Error Write Database --> ${err}`) };

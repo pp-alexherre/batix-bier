@@ -1,0 +1,70 @@
+version: '3'
+
+services:
+  db_batix:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: peter2020#+
+      MYSQL_DATABASE: batixdb
+      MYSQL_USER: clientServer
+      MYSQL_PASSWORD: 8bwEvQ1ECRdU0OJB
+    ports:
+      - 3306:3306
+    volumes:
+      - /mnt/PP_VOLUME_1/pp_shared/databases/pp_batix:/var/lib/mysql
+    networks:
+      - batix_backend
+      
+  phpmyadmin_batix:
+    depends_on:
+      - db_batix
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_PORT: 3306:3306
+      PMA_HOST: db_batix:3306
+    networks:
+      - batix_frontend
+      - batix_backend
+    labels:
+      - traefik.backend=phpmyadmin_batix
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:phpmyadmin.batix.herre.info
+      - traefik.port=80
+      - traefik.docker.network=batix_frontend
+    ports:
+      - 7095:80
+      
+  api_batix:
+    depends_on:
+      - db_batix
+      - phpmyadmin_batix
+    image: image_batix:latest
+    networks: 
+      - batix_frontend
+      - batix_backend
+      - default
+    volumes:
+      - /var/apps/batix/arbeitsprobe/server:/var/www/html/server
+    links:
+      - db_batix
+    labels:
+      - traefik.backend=api_batix
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:api.batix.herre.info
+      - traefik.acme.email=alex@herre.info
+      - treafik.port=54110
+      - traefik.docker.network=batix_frontend
+    environment:
+      - NODE_ENV=production
+      - url=https://api.batix.herre.info
+    ports:
+      - 54110:54110
+
+networks:
+  batix_frontend:
+    external: true
+  default:
+    driver: bridge
+  batix_backend:
+    internal: true
+
