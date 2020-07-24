@@ -123,13 +123,16 @@ const _writeCurrentFileToDatabase = async(dataItemArray, name, index, res) => {
                 status: statusCountry
             }).then(() => {
                 INDEX2++;
-                console.log('index ---> ', index);
-                console.log('INDEX 2 ---> ', INDEX2);
+                console.log(`Schleife läuft  ---- > INDEX --> ${INDEX2} --------> ${dataItem.COUNTRY}  `)
                 if (INDEX2 >= index) {
-                    console.log('fertig  ----------------- > INDEX2 1', INDEX2)
+                    INDEX = 0;
                     INDEX2 = 0;
-                    console.log('fertig  ----------------- > INDEX2 2', INDEX2)
+                    console.log('fertig  ----------------- > Server wird neu gestartet')
                     res.status(200).json({ statustext: 'Bier-Daten gespeichert und werden verarbeitet ! Prost !!', originalname: name })
+
+                    setTimeout(() => {
+                        process.exit(1)
+                    }, 3000);
                 }
             })
         } catch (err) { console.error(`Error Write Database --> ${err}`) };
